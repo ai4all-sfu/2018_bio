@@ -39,7 +39,36 @@ result/\<date\>\_\<time\> folder will contain results separated by time of makin
 - dm\_anc.Rdata: distance matrix made using alignment\_anc.fa
 
 
+## extra packages
 
+Terminal
+```{bash}
+source activate py27
+conda install -c r r-e1071 
+conda install -c r r-igraph 
+conda install -c geraldmc r-phylotop 
+```
+Rstudio
+```{r}
+install.packages('phangorn') 
+install.packages('phytools')
+install.packages('nloptr') 
+install.packages('lme4') 
+install.packages('pbkrtest') 
+install.packages('car') 
+install.packages('NHPoisson') 
+```
+Terminal
+```{bash}
+conda install -c r r-nloptr
+conda install -c r r-xml 
+```
+Rstudio
+```{r}
+install.packages('RNeXML') 
+install.packages('phylobase') 
+install.packages('phyloTop') 
+```
 
 
 
