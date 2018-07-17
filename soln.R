@@ -24,9 +24,9 @@ while (!all(nodes%in%strains)) {
     }
     # get parent strain that is closest to inferred ancestral strain
     parent = names(dm_colind[which.min(dm_anc[node, dm_colind])])
-    edges[edges==node] = nodes[nodes==node] = node_strain = parent
+    edges[edges==node] = nodes[nodes==node] = parent
     # nodes_in = setdiff(nodes_in, node)
-    node = edges[edges[,2]==node_strain, 1]
+    node = edges[edges[,2]==parent, 1]
   }
 }
 save(edges, file=paste(result_dir,"/edges.Rdata", sep=""))
