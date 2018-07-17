@@ -11,7 +11,7 @@ Phylogenetic trees can also be used to extract information from viral/bacterial/
 
 Homepage: https://sites.google.com/view/ai4all-sfu2018/projects/bioinformatics
 
-Github repository: https://github.com/ai4all-sfu/bio
+Github repository: https://github.com/ai4all-sfu/bio_public
 
 Slides: https://docs.google.com/presentation/d/1XpPjTZGQP1KkpAeiDjAUfz-uCqQMs2x1_a4lo_aJa3o/edit?usp=sharing
 
