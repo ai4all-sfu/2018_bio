@@ -1,4 +1,3 @@
-tree_labelled = T
 # while there are still strains unlabelled
 while (!all(nodes%in%strains)) {
   # find children of selected node
@@ -19,13 +18,12 @@ while (!all(nodes%in%strains)) {
     # if no strains satisfy our contraints, end loop
     if (length(dm_colind)==0) {
       print("incomplete! need data on older strains")
-      tree_labelled = F
       break()
     }
     # get parent strain that is closest to inferred ancestral strain
     parent = names(dm_colind[which.min(dm_anc[node, dm_colind])])
     edges[edges==node] = nodes[nodes==node] = parent
-    # nodes_in = setdiff(nodes_in, node)
+    # we're done! go back up the tree
     node = edges[edges[,2]==parent, 1]
   }
 }
