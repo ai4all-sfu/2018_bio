@@ -1,7 +1,5 @@
-# bio
-**The bioinformatics project**: Inferring the infection pathway of influenza
-
-2018 SFU Invent the Future
+# Inferring the infection pathway of influenza
+2018 SFU Invent the Future Summer Scholar Program
 
 In this project, students will learn how computational biology can allow us to 1) infer ancestral strains and 2) predict future strains of viruses -- in order to understand the infection pathway of influenza and preventatively make vaccines before outbreaks occur. 
 
@@ -11,27 +9,29 @@ Phylogenetic trees can also be used to extract information from viral/bacterial/
 
 Homepage: https://sites.google.com/view/ai4all-sfu2018/projects/bioinformatics
 
-Github repository: https://github.com/ai4all-sfu/bio_public
+Github repository: https://github.com/ai4all-sfu/bio
 
 Slides: https://docs.google.com/presentation/d/1XpPjTZGQP1KkpAeiDjAUfz-uCqQMs2x1_a4lo_aJa3o/edit?usp=sharing
+
 
 ## usage
 
 1. install mafft (for multiple sequence alignment) @ [https://mafft.cbrc.jp/alignment/software/](https://mafft.cbrc.jp/alignment/software/)
 
-2. download this repository and follow the R code in **[main.html](main.html)**; remember to **change the variable "root"** to the local folder you downloaded this repository to
+2. download this repository and follow the R code in **[index.html](https://ai4all-sfu.github.io/bio_public/)**; remember to **change the variable " root "** to the local folder you downloaded this repository to, and if you are starting anew, **set " result\_time\_="" "**
+
 
 ## folder/file structure
 
 data folder contains processed data
 - FASTA.fa: the HA gene sequence in influenza subtype A/H3N2 from years 1997 - 2017 (sorted by date) (n = 10370)
 - meta.csv: metadata merged, and sorted by date the same way as FASTA.fa 
-- alignment.fa: viral strain sequence alignments of mafft made using FASTA.fa
+- alignment.fa: viral strain sequence alignments of mafft made using FASTA.fa 
 - Aux_data.csv: contains all the strain name and date from FASTA.fa
 - FinalH3N2: maximum likelihood generated phylogeny made from FASTA.fa
 - df.csv: features for each strain/clade used for prediction
 
-result/\<date\>\_\<time\> folder will contain results separated by time of making
+result/\<date\>\_\<time\> folder contains results separated by time of making (output of [index.Rmd](index.Rmd))
 - ind.csv: randomly sampled strain names of 200 recent viral sequences
 - FASTA\_anc.fa: reconstructed ancestral sequences
 - FASTA\_all.fa: data/FASTA.fa (minus the 200 sequences) + reconstructed ancestral sequences
@@ -41,14 +41,18 @@ result/\<date\>\_\<time\> folder will contain results separated by time of makin
 
 ## extra packages
 
-Terminal
+if you are having issues installing packages in the script, install the following packages in the order listed (note: install miniconda [here](https://conda.io/docs/user-guide/install/index.html)); courtesy of raquel
+
+terminal
 ```{bash}
 source activate py27
 conda install -c r r-e1071 
 conda install -c r r-igraph 
 conda install -c geraldmc r-phylotop 
+conda install -c r r-nloptr
+conda install -c r r-xml 
 ```
-Rstudio
+r
 ```{r}
 install.packages('phangorn') 
 install.packages('phytools')
@@ -57,18 +61,11 @@ install.packages('lme4')
 install.packages('pbkrtest') 
 install.packages('car') 
 install.packages('NHPoisson') 
-```
-Terminal
-```{bash}
-conda install -c r r-nloptr
-conda install -c r r-xml 
-```
-Rstudio
-```{r}
 install.packages('RNeXML') 
 install.packages('phylobase') 
 install.packages('phyloTop') 
 ```
+
 
 
 
